@@ -34,7 +34,11 @@ namespace websocket_with_beast_server_combined
     // Report a failure
     struct fail
     {
-        void operator()(std::error_code ec, char const* what) { std::cerr << what << ": " << ec.message() << "\n"; }
+        void operator()(std::error_code ec, char const* what) 
+        {
+            std::cerr << what << ": " << ec.message() << "\n";
+            REQUIRE(false);
+        }
     };
 
     enum class environment
