@@ -25,7 +25,8 @@
                     "ADDRESS_SANITIZER": "no",
                     "UNDEFINED_SANITIZER": "no",
                     "DO_CLANG_TIDY": "yes",
-                    "DO_CLANG_FORMAT": "yes"
+                    "DO_CLANG_FORMAT": "yes",
+                    "DO_TESTS": "yes"
                 }
             },
             "coverage": {
@@ -33,7 +34,8 @@
                 "settings": {
                     "CLANG_CODE_COVERAGE": "yes",
                     "ADDRESS_SANITIZER": "no",
-                    "UNDEFINED_SANITIZER": "no"
+                    "UNDEFINED_SANITIZER": "no",
+                    "DO_TESTS": "yes"
                 }
             },
             "address_sanitizer": {
@@ -41,7 +43,8 @@
                 "settings": {
                     "CLANG_CODE_COVERAGE": "no",
                     "ADDRESS_SANITIZER": "yes",
-                    "UNDEFINED_SANITIZER": "no"
+                    "UNDEFINED_SANITIZER": "no",
+                    "DO_TESTS": "yes"
                 }
             },
             "undefined_sanitizer": {
@@ -49,7 +52,8 @@
                 "settings": {
                     "CLANG_CODE_COVERAGE": "no",
                     "ADDRESS_SANITIZER": "no",
-                    "UNDEFINED_SANITIZER": "yes"
+                    "UNDEFINED_SANITIZER": "yes",
+                    "DO_TESTS": "yes"
                 }
             }
         }

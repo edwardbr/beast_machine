@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(websocket_test)
-
+project(test_beast_machine)
 
 add_executable(${PROJECT_NAME} test.cpp)
 

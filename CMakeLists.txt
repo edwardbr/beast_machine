@@ -21,6 +21,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/clang_tools.cmake)
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
 option(DO_CLANG_TIDY "Enable clang tidy" OFF)
 option(DO_CLANG_FORMAT "Enable clang format" OFF)
+option(DO_TESTS "Enable tests" OFF)
 
 hunter_add_package(Boost COMPONENTS 
     system
@@ -56,7 +57,10 @@ endif()
 
 message("code")
 add_subdirectory(code)
-message("test")
-add_subdirectory(test)
+
+if(DO_TESTS)
+    message("test")
+    add_subdirectory(test)
+endif()
 
 enable_testing()
