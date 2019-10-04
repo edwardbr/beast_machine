@@ -11,7 +11,7 @@ This library is designed to allow you to create a state engine that matches your
 
 The state machine is capable of supporting nested state machines for more complicated interaction.
 
-The state machine does not specify the payload going between your client and server, I would recommend that you use something like googles flatbuffer for this.
+The state machine does not specify the payload going between your client and server, I would recommend that you use something like https://google.github.io/flatbuffers/ for this.
 
 The state machine supports individual messages and streamed data.
 
