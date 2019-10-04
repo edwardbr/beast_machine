@@ -2,7 +2,7 @@
 
 #include <system_error>
 
-namespace network
+namespace beast_machine
 {
 //this enum type expects that there will be no overlapped communication between sender and receiver
 //a sender will complete sending before it starts receiving
@@ -26,12 +26,12 @@ enum class errc
   unexpected_exception, 
 };
 
-std::error_code make_error_code(network::errc);
+std::error_code make_error_code(beast_machine::errc);
 }
 
 namespace std
 {
   template <>
-    struct is_error_code_enum<network::errc> : true_type {};
+    struct is_error_code_enum<beast_machine::errc> : true_type {};
 }
  

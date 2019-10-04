@@ -1,0 +1,57 @@
+{
+    "build_type": {
+        "default": "debug",
+        "description": "The build type to use",
+        "choices": {
+            "debug": {
+                "short": "Debug",
+                "long": "Emit debug information without performing optimizations",
+                "buildType": "Debug"
+            },
+            "release": {
+                "short": "Release",
+                "long": "Enable optimizations, omit debug info",
+                "buildType": "Release"
+            }
+        }
+    },
+    "Options": {
+        "default": "default",
+        "choices": {
+            "default": {
+                "short": "Build without code coverage",
+                "settings": {
+                    "CLANG_CODE_COVERAGE": "yes",
+                    "ADDRESS_SANITIZER": "no",
+                    "UNDEFINED_SANITIZER": "no",
+                    "DO_CLANG_TIDY": "yes",
+                    "DO_CLANG_FORMAT": "yes"
+                }
+            },
+            "coverage": {
+                "short": "Enable code coverage metrics in Clang",
+                "settings": {
+                    "CLANG_CODE_COVERAGE": "yes",
+                    "ADDRESS_SANITIZER": "no",
+                    "UNDEFINED_SANITIZER": "no"
+                }
+            },
+            "address_sanitizer": {
+                "short": "Enable Clang AddressSanitizer",
+                "settings": {
+                    "CLANG_CODE_COVERAGE": "no",
+                    "ADDRESS_SANITIZER": "yes",
+                    "UNDEFINED_SANITIZER": "no"
+                }
+            },
+            "undefined_sanitizer": {
+                "short": "Enable Clang UndefinedBehaviorSanitizer",
+                "settings": {
+                    "CLANG_CODE_COVERAGE": "no",
+                    "ADDRESS_SANITIZER": "no",
+                    "UNDEFINED_SANITIZER": "yes"
+                }
+            }
+        }
+    }
+}

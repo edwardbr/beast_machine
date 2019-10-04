@@ -1,3 +1,5 @@
+#pragma once
+
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <boost/asio/strand.hpp>
@@ -8,7 +10,7 @@
 #include <string>
 #include "session.hpp"
 
-namespace network
+namespace beast_machine
 {
 namespace client
 {
@@ -210,4 +212,4 @@ namespace client
         template<class err_code> void fail(err_code ec, char const* what) { (*_fail_sync)(ec, what); }
     };
 } // namespace client
-} // namespace network
+} // namespace beast_machine

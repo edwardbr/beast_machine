@@ -23,6 +23,10 @@ if(DO_CLANG_TIDY)
   clang_tidy_check(${PROJECT_NAME} )
 endif()
 
+if(CLANG_FORMAT_EXE)
+    add_custom_target("clang_format_${PROJECT_NAME}" COMMAND "${CLANG_FORMAT_EXE} -i test.cpp")
+endif()
+
 include(CTest)
 include(Catch)
 catch_discover_tests(${PROJECT_NAME})

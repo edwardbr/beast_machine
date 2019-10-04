@@ -24,7 +24,7 @@
 # 
 ################################################################################
 include(CMakeParseArguments)
-include(Analyzers)
+#include(Analyzers)
 
 find_program(CLANG_TIDY_EXE 
     NAMES 
@@ -41,6 +41,7 @@ find_program(CLANG_TIDY_EXE
     PATHS
         /opt/rocm/hcc
         /usr/local/opt/llvm/bin
+        /usr/local/clang_8.0.0/bin
 )
 
 function(find_clang_tidy_version VAR)
@@ -124,7 +125,7 @@ macro(enable_clang_tidy)
         -header-filter='${CLANG_TIDY_HEADER_FILTER}'
     )
     add_custom_target(tidy ${CLANG_TIDY_ALL})
-    mark_as_analyzer(tidy)
+    # mark_as_analyzer(tidy)
     add_custom_target(tidy-base)
     add_custom_target(tidy-make-fixit-dir COMMAND ${CMAKE_COMMAND} -E make_directory ${CLANG_TIDY_FIXIT_DIR})
     add_custom_target(tidy-rm-fixit-dir COMMAND ${CMAKE_COMMAND} -E remove_directory ${CLANG_TIDY_FIXIT_DIR})

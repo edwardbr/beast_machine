@@ -37,7 +37,8 @@ hunter_add_package(Catch2)
 find_package(Catch2 CONFIG REQUIRED)
 
 if(DO_CLANG_TIDY)
-  enable_clang_tidy(
+    include(${CMAKE_SOURCE_DIR}/cmake/ClangTidy.cmake)
+    enable_clang_tidy(
       CHECKS
           -*
           misc-non-private-member-variables-in-classes

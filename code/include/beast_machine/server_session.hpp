@@ -10,7 +10,7 @@
 #include <string>
 #include "session.hpp"
 
-namespace network
+namespace beast_machine
 {
     namespace server
     {
@@ -301,5 +301,5 @@ namespace network
 
     const errc_category the_category {};
 
-    std::error_code make_error_code(network::errc e) { return {static_cast<int>(e), network::the_category}; }
-} // namespace network
+    std::error_code make_error_code(beast_machine::errc e) { return {static_cast<int>(e), beast_machine::the_category}; }
+} // namespace beast_machine

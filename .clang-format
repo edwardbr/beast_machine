@@ -23,6 +23,7 @@ IndentCaseLabels: false
 SortIncludes:    false
 SpaceAfterCStyleCast: false
 SpaceAfterTemplateKeyword: false
+AlwaysBreakTemplateDeclarations: true
 SpaceBeforeAssignmentOperators: true
 SpacesInSquareBrackets: false
 Cpp11BracedListStyle: true
