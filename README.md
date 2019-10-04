@@ -1,6 +1,8 @@
 # beast_machine
 A test friendly state machine for beast applications
 
+Please note this project is young and needs some polish, please send feedback on improvements.  Currently only tested on clang.
+
 ## Introduction
 
 There are numerous state machines implemented for C++, however when you are making an app where both sides are on different machines, it is hard to test.  
