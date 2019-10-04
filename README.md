@@ -29,8 +29,8 @@ However in summary using cmake add a cmake/Hunter/config.cmake file:
 
 ```
 hunter_config(beast_machine
-    URL https://github.com/edwardbr/beast_machine/archive/master.tar.gz
-    SHA1 08b9d72534b34885139bb3dad74839b6b475a1ab)
+    URL https://github.com/edwardbr/beast_machine/archive/v1.0.tar.gz
+    SHA1 228dea840b14e1894e97f0cd98466693bfdf2aed)
 ```
 Where the SHA code is whatever is required, ideally please use a tagged branch.
 
