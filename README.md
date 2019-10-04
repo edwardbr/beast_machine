@@ -94,19 +94,19 @@ Your switch statement then controls the state of the underlying beast_machine ru
 ```
 enum class callback_result
 {
-    read,              //async read full blob
-    need_more_reading, //async read little bits of blob
-    need_more_writing, //async write little bits of blob
-    write_complete,    //complete writing and then start reading
+    read,                         //async read full blob
+    need_more_reading,            //async read little bits of blob
+    need_more_writing,            //async write little bits of blob
+    write_complete,               //complete writing and then start reading
     write_complete_async_read,    //complete writing and then start reading little bits
-    close              //terminate the conversation
+    close                         //terminate the conversation
 };
 ```
 
-You need to set initial states for each:
+You need to set initial states for each at this point the connection is open, typically the client then sends some data to the server in this case:
 
 The server should be beast_machine::callback_result::read
 
-And the client to beast_machine::callback_result::write_complete, or need_more_writing, or write_complete_async_read.
+And the client to send data and set state to beast_machine::callback_result::write_complete, or need_more_writing, or write_complete_async_read.
 
 Either side can choose to end the conversation by setting the callback result to beast_machine::callback_result::close.
