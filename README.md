@@ -73,15 +73,15 @@ beast_machine::callback_return callback(beast::flat_buffer& buffer, size_t& read
     {
     case initialise:
         _state = receive_hello;
-        REQUIRE(readable_bytes == 0); // NOLINT
+        REQUIRE(readable_bytes == 0); 
         // server is initialised
-        if constexpr (is_server) // NOLINT
-        {                        // NOLINT
+        if constexpr (is_server) 
+        {                        
             return beast_machine::callback_return(beast_machine::callback_result::read, std::string());
         }
         // client sends hello
-        if constexpr (is_client) // NOLINT
-        {                        // NOLINT
+        if constexpr (is_client) 
+        {                        
             return beast_machine::callback_return(beast_machine::callback_result::write_complete,
                                                   "hello world");
         }
