@@ -14,4 +14,5 @@ The state machine does not specify the payload going between your client and ser
 The state machine supports individual messages and streamed data.
 
 The test project has the following sequence:
+
 ![Sequence diagram](https://github.com/edwardbr/beast_machine/blob/master/docs/flow_diagram.png?raw=true)
