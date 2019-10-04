@@ -58,3 +58,31 @@ target_link_libraries(${PROJECT_NAME}
 ```
 
 Alternatively you can clone the repo and build and run the test.
+
+The state engine you write yourself is little more than an encapsulated switch statement with if constexprs for each state transistion server client combination providing a simple coroutine type construct.
+
+
+```beast_machine::callback_return callback(beast::flat_buffer& buffer, size_t& readable_bytes,
+                                                bool message_read_complete)
+        {
+            switch (_state)
+            {
+            case initialise:
+                _state = receive_hello;
+                REQUIRE(readable_bytes == 0); // NOLINT
+                // server is initialised
+                if constexpr (is_server) // NOLINT
+                {                        // NOLINT
+                    return beast_machine::callback_return(beast_machine::callback_result::read, std::string());
+                }
+                // client sends hello
+                if constexpr (is_client) // NOLINT
+                {                        // NOLINT
+                    return beast_machine::callback_return(beast_machine::callback_result::write_complete,
+                                                          "hello world");
+                }
+                break;
+...
+```
+
+Each case statement can then update the state of the engine according to your requirements, making sure that your client and server remain in lockstep.
